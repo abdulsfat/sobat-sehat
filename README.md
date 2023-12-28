@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/abdulsfat/sobat-sehat.git" target="_blank"><img src="https://github.com/abdulsfat/sobat-sehat/public/assets/img/logo-sobat-sehat.png" width="400" alt="Sobat Sehat Logo"></a></p>
+<p align="center"><a href="https://github.com/abdulsfat/sobat-sehat.git" target="_blank"><img src="public/assets/img/logo-sobat-sehat.png" width="400" alt="Sobat Sehat Logo"></a></p>
 
 # Sobat Sehat
 
