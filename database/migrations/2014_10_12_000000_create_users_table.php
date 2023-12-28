@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('is_validated')->default(false);
+            $table->enum('role', ['admin', 'kontributor'])->default('kontributor');
+            $table->string('profile_picture')->default('default-profile-picture.png');
+            $table->string('institution')->nullable();
             $table->timestamps();
         });
     }
