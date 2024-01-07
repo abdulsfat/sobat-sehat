@@ -19,3 +19,11 @@ Route::get('/', function () {
 Route::get('/info-kegiatan', function () {
     return view('user/info-kegiatan');
 });
+
+/**
+ * * Dashboard Amin
+ * testing dashboard admin
+ */
+Route::get('/admin', function () {
+    return view('admin/index');
+});

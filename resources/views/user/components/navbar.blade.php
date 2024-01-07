@@ -10,7 +10,7 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="{{asset('img/icon.png')}}">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
