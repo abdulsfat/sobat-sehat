@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,19 +13,26 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
-Route::get('/', function () {
-    return view('user/welcome');
-});
-Route::get('/info-kegiatan', function () {
-    return view('user/info-kegiatan');
-});
+
+
+ /**
+ * * User
+ * testing Halaman User
+ */
+Route::get('/', [UserController::class, 'index'])->name('index');
+Route::get('/info-kegiatan', [UserController::class, 'info'])->name('user-info');
+Route::get('/profil', [UserController::class, 'profil'])->name('user-profil');
+Route::get('/berita', [UserController::class, 'berita'])->name('user-berita');
+
 
 /**
- * * Dashboard Amin
+ * * Dashboard Admin
  * testing dashboard admin
  */
-Route::get('/admin', function () {
-    return view('admin/index');
-});
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin-index');
+Route::get('/admin/kegiatan', [AdminController::class, 'kegiatan'])->name('admin-kegiatan');
+Route::get('/admin/kontributor', [AdminController::class, 'kontributor'])->name('admin-kontributor');
+Route::get('/admin/berita', [AdminController::class, 'berita'])->name('admin-berita');
+

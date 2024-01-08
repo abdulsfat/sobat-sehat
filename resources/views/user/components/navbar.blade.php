@@ -28,6 +28,7 @@
     <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('css')
   </head>
 
@@ -45,10 +46,10 @@
           <div class="ms-4"></div>
           <div  class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-lg-5 me-auto mb-2 mb-lg-0" >
-              <li class="nav-item"><a href="#" class="ms-4 nav-link active">Beranda</a></li>
-              <li class="nav-item"><a href="#" class="ms-4 nav-link">Informasi Kegiatan</a></li>
-              <li class="nav-item"><a href="#" class="ms-4 nav-link">Profil</a></li>
-              <li class="nav-item"><a href="#" class="ms-4 nav-link">Berita</a></li>
+              <li class="nav-item"><a href={{ route('index') }} class="ms-4 nav-link {{ request()->is('/') ? 'active' : '' }}">Beranda</a></li>
+              <li class="nav-item"><a href={{ route('user-info') }} class="ms-4 nav-link {{ request()->is('info-kegiatan') ? 'active' : '' }}">Informasi Kegiatan</a></li>
+              <li class="nav-item"><a href={{ route('user-profil') }} class="ms-4 nav-link {{ request()->is('profil') ? 'active' : '' }}">Profil</a></li>
+              <li class="nav-item"><a href={{ route('user-berita') }} class="ms-4 nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a></li>
             </ul>
     
             <div class="col-md-3 text-end">

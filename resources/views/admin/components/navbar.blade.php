@@ -46,12 +46,12 @@
           <ul class="mt-6">
             <li class="relative px-6 py-3">
               <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+              class="{{ request()->is('admin') ? 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg' : '' }}"
                 aria-hidden="true"
               ></span>
               <a
-                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                href="index.html"
+                class="{{ request()->is('admin') ? 'text-gray-800 dark:text-gray-100 ' : '' }} inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href={{ route('admin-index') }}
               >
                 <svg
                   class="w-5 h-5"
@@ -75,9 +75,13 @@
           <ul>
             {{-- Side Menu --}}
             <li class="relative px-6 py-3">
+                <span
+                class="{{ request()->is('admin/kegiatan') ? 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg' : '' }}"
+                  aria-hidden="true"
+                ></span>
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="forms.html"
+                class="{{ request()->is('admin/kegiatan') ? 'text-gray-800 dark:text-gray-100 ' : '' }} inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href={{ route('admin-kegiatan') }}
               >
                 <svg
                   class="w-5 h-5"
@@ -99,9 +103,13 @@
             {{-- Side End --}}
             {{-- Side Menu --}}
             <li class="relative px-6 py-3">
+                <span
+                class="{{ request()->is('admin/kontributor') ? 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg' : '' }}"
+                  aria-hidden="true"
+                ></span>
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="forms.html"
+                class="{{ request()->is('admin/kontributor') ? 'text-gray-800 dark:text-gray-100 ' : '' }}inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href='{{ route('admin-kontributor') }}'
               >
                 <svg
                   class="w-5 h-5"
@@ -113,19 +121,23 @@
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                  ></path>
+                <path
+                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+              ></path>
                 </svg>
-                <span class="ml-4">Users</span>
+                <span class="ml-4">Kontributor</span>
               </a>
             </li>
             {{-- Side End --}}
             {{-- Side Menu --}}
             <li class="relative px-6 py-3">
+                <span
+                class="{{ request()->is('admin/berita') ? 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg' : '' }}"
+                  aria-hidden="true"
+                ></span>
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="forms.html"
+                class="{{ request()->is('admin/berita') ? 'text-gray-800 dark:text-gray-100 ' : '' }} inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href='{{ route('admin-berita') }}'
               >
                 <svg
                   class="w-5 h-5"
@@ -341,7 +353,15 @@
             <button
               class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
             >
-              Create account
+              Buat Kegiatan
+              <span class="ml-2" aria-hidden="true">+</span>
+            </button>
+          </div>
+          <div class="px-6 my-3">
+            <button
+              class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+            Buat Berita
               <span class="ml-2" aria-hidden="true">+</span>
             </button>
           </div>
@@ -860,7 +880,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="#"
+                        href={{ route('index') }}
                       >
                         <svg
                           class="w-4 h-4 mr-3"

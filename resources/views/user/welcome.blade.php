@@ -1,9 +1,5 @@
 @extends('user\components\navbar')
 
-@section('css')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@endsection
-
 @section('title', 'Sobat Sehat')
 
 @section('content')

@@ -6,7 +6,7 @@
     <section id="kegiatan" class="">
       <div class="container ">
       <div>
-      <h3>Informasi Kegiatan Sehat Masyarakat</h3>
+      <h3>Ini halaman Profil</h3>
       <p>Temukan beragam kegiatan sehat masyarakat secara mudah dan cepat berdasarkan nama, tanggal, dan tempat. <br> Jelajahi berbagai acara yang didedikasikan untuk meningkatkan kesehatan dan kesejahteraan masyarakat.</p>
       </div>
       <div class="mt-5 ">
